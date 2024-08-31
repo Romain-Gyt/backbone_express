@@ -1,0 +1,45 @@
+
+.env
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Repos local de base de données (PostgreSQL)
+pg_data/
+pg_log/
+postgresql.log
+
+# Vue.js/Front-End build files
+/dist
+/.cache
+/.temp
+
+# IDEs/Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Système d'exploitation (OS)
+.DS_Store
+Thumbs.db
+
+# Test Coverage (Jest, Mocha, etc.)
+coverage/
