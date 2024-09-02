@@ -1,0 +1,22 @@
+### Test de l'inscription
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@gmail.com",
+  "password": "testpass"
+}
+
+### Test de la connexion
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpass"
+}
+
+### Test de la récupération du profil utilisateur
+GET http://localhost:5000/api/users/profile
+Authorization: Bearer {{token}}
