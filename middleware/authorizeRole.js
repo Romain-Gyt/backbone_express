@@ -1,5 +1,6 @@
 const User = require('../models/User');
-
+const Role = require('../models/Role')
+let rolesCache= {};
 const authorizeRole = (requiredRole) => {
     return async (req, res, next) => {
         try {
@@ -27,13 +28,15 @@ const authorizeRole = (requiredRole) => {
     };
 };
 
-const getRoleLevel = (role) => {
-    const levels = {
-        'ROLE_USER': 1,
-        'ROLE_MODERATOR': 2,
-        'ROLE_ADMIN': 3
-    };
-    return levels[role] || 0; // Retourne 0 si le rôle n'est pas défini
+const loadRoles = async () => {
+    const roles = await Role.findAll();
+    roles.forEach(role => {
+        rolesCache[role.name] = role.level;
+    });
 };
 
-module.exports = authorizeRole;
+const getRoleLevel = (role) => {
+    return rolesCache[role] || 0; // Retourne 0 si le rôle n'existe pas
+};
+
+module.exports = { authorizeRole, loadRoles };
