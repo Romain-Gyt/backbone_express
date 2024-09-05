@@ -1,7 +1,7 @@
 
     const express = require('express');
     const { connectDB } = require('./config/db')
-    const { loadRoles } = require('./middleware/authorizeRole');
+    // const { loadRoles } = require('./middleware/authorizeRole');
     const cors = require('cors');
     const dotenv = require('dotenv');
 
@@ -27,13 +27,13 @@
     app.use('/api/role',require('./routes/roleRoutes'));
 
     // Démarrer le serveur
-    loadRoles()
-        .then(() => {
-            console.log('Rôles chargés en mémoire');
+    // loadRoles()
+    //     .then(() => {
+    //         console.log('Rôles chargés en mémoire');
             app.listen(PORT, () => {
                 console.log(`Le serveur est lancé sur le port ${PORT}`);
             });
-        })
-        .catch((error) => {
-            console.error('Erreur lors du chargement des rôles:', error);
-        });
+        // })
+        // .catch((error) => {
+        //     console.error('Erreur lors du chargement des rôles:', error);
+        // });

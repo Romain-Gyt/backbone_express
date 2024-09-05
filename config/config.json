@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "admin_gg",
-    "password": "admin_gg_password",
+    "password": "root",
     "database": "granite_goelettes",
     "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port": 5432
+    "dialect": "mariadb",
+    "port": 3306
   },
   "test": {
     "username": "admin_gg",
-    "password": "admin_gg_password",
+    "password": "root",
     "database": "granite_goelettes_test",
     "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port": 5432
+    "dialect": "mariadb",
+    "port": 3306
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
-    "dialect": "postgres"
+    "dialect": "mariadb"
   }
 }
