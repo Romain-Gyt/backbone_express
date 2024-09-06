@@ -9,7 +9,7 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 const sequelize = new Sequelize(
-    config.use_env_variable ? process.env[config.use_env_variable] : config.database,
+    config.databaseProd ? process.env[config.databaseProd] : config.database,
     config.username,
     config.password,
     {

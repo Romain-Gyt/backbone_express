@@ -18,7 +18,7 @@ module.exports = {
     port: process.env.DB_PORT
   },
   production: {
-    use_env_variable:process.env.DATABASE_URL,
+    databaseProd:process.env.DATABASE_URL,
     dialect: process.env.DB_DIALECT
   }
 };
