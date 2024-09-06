@@ -1,4 +1,3 @@
-// models/index.js
 'use strict';
 
 const fs = require('fs');
@@ -9,7 +8,11 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
+// Ajouter la configuration du fuseau horaire
+const sequelize = new Sequelize(config.database, config.username, config.password, {
+    ...config,
+    timezone: 'Europe/Paris' // Configure le fuseau horaire à utiliser lors de la récupération des dates
+});
 
 fs
     .readdirSync(__dirname)

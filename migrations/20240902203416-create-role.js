@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(15),
         allowNull: false,
       },
       hierarchyLevel: {
@@ -27,6 +27,16 @@ module.exports = {
         allowNull: true,
         type: Sequelize.DATE,
         defaultValue: null,
+      },
+      deletedAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: null
+      },
+      isVisible: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
       }
     });
   },

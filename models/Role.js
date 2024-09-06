@@ -1,24 +1,59 @@
+'use strict';
+const { Model } = require('sequelize');
 
-    module.exports = (sequelize, DataTypes) => {
-        const Role = sequelize.define('Role', {
-            name: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
-            hierarchyLevel: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-                defaultValue: 1, // Niveau de hiérarchie par défaut pour les rôles
-            }
-        });
-
-        // Association avec le modèle User
-        Role.associate = (models) => {
+module.exports = (sequelize, DataTypes) => {
+    class Role extends Model {
+        static associate(models) {0
+            // Association avec le modèle User
             Role.hasMany(models.User, {
-                foreignKey: 'roleId', // Lier le rôle avec les utilisateurs via 'roleId'
+                foreignKey: 'roleId', // Clé étrangère reliant le rôle aux utilisateurs
                 as: 'users',
             });
-        };
+        }
+    }
 
-        return Role;
-    };
+    Role.init({
+        name: {
+            type: DataTypes.STRING(15),
+            allowNull: false,
+            validate: {
+                notNull: { msg: 'Le nom du rôle est obligatoire' },
+                notEmpty: { msg: 'Le nom du rôle ne peut pas être vide' },
+                len: {
+                    args: [5, 15],
+                    msg: 'Le nom du rôle doit comporter entre 5 et 15 caractères',
+                },
+            },
+        },
+        hierarchyLevel: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1,
+            validate: {
+                isInt: { msg: 'Le niveau de hiérarchie doit être un entier' },
+                min: {
+                    args: 1,
+                    msg: 'Le niveau de hiérarchie doit être supérieur ou égal à 1',
+                },
+            },
+        },
+        isVisible: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
+        deletedAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+            defaultValue: null
+        }
+    }, {
+        sequelize,
+        modelName: 'Role',
+        tableName: 'roles',
+        timestamps: true,
+        paranoid: true
+    });
+
+    return Role;
+};

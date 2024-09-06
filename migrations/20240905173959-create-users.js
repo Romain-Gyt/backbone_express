@@ -10,17 +10,17 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       username: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
         allowNull: false,
         unique: true,
       },
       email: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(150),
         allowNull: false,
         unique: true,
       },
       password: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(60),
         allowNull: false,
       },
       roleId: {
@@ -41,6 +41,16 @@ module.exports = {
         allowNull: true,
         type: Sequelize.DATE,
         defaultValue: null,
+      },
+      deletedAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: null
+      },
+      isBan: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
       }
     });
   },

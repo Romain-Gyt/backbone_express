@@ -5,7 +5,7 @@
     "database": "granite_goelettes",
     "host": "127.0.0.1",
     "dialect": "mariadb",
-    "port": 3306
+    "port": 3307
   },
   "test": {
     "username": "admin_gg",
@@ -13,7 +13,7 @@
     "database": "granite_goelettes_test",
     "host": "127.0.0.1",
     "dialect": "mariadb",
-    "port": 3306
+    "port": 3307
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
