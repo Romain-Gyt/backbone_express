@@ -49,7 +49,7 @@ npm install
 - DB_NAME=*Nom de la base de données*
 - PORT=*Port sur lequel le serveur Express écoutera (ex : 4000)*
 - DB_DIALECT=*Dialecte de la base de données (mariadb, postgres, mysql, sqlite, etc.)*
-- JWT_SECRET=* Clé secrète utilisée pour la signature des tokens JWT*
+- JWT_SECRET=*Clé secrète utilisée pour la signature des tokens JWT*
 - NODE_ENV=* Environnement d'exécution (development, production,production)*
 
 
