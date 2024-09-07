@@ -35,8 +35,9 @@ cd backbone_express
 ```
 
 ### Étape 2 : Installer les dependances
-git config --global user.name
+```bash
 npm install
+```
 
 
 ### Étape 3 : Creation a la racine du fichier .env
