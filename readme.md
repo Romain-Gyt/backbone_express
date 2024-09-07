@@ -127,7 +127,6 @@ backone-backend/
 - POST /api/roles : Crée un nouveau rôle
   Paramètres requis : name, hierarchyLevel
 - GET /api/roles : Récupère tous les rôles
-  Réponse :
 
 ### Gestion des Profils
 - Route a créer selon vos besoins
