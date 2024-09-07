@@ -8,9 +8,9 @@ router.use(authenticate);
 
 
 //route pour créer les roles
-router.post('/',createRole);
+router.post('/',verifyRole(['ROLE_ADMIN']),createRole);
 
 //route pour obtenir tous les roles
-router.get('/',verifyRole(['ROLE_EDITOR','ROLE_ADMIN']),getRoles);
+router.get('/',verifyRole(['ROLE_ADMIN']),getRoles);
 
 module.exports = router
