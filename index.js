@@ -19,7 +19,7 @@ connectDB();
 
 // Routes simples pour tester l'API
 app.get('/', (req, res) => {
-    res.json({ message: 'Bienvenue sur l\'API Granite & Goélettes! A la date du ' + new Date + ' , le site est toujours en production' });
+    res.json({ message: ' Hello world' });
 });
 //Route
 app.use('/api/auth',require('./routes/authRoutes'));
