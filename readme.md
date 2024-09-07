@@ -9,7 +9,6 @@ Basé sur Node.js, conçu avec Express.js et Sequelize. Il est conçu pour être
 - Authentification avec JWT
 - Gestion des utilisateurs et des rôles
 - Autorisations basées sur des rôles avec niveaux hiérarchiques
-- API CRUD pour les utilisateurs et les rôles
 - Compatibilité avec plusieurs moteurs de base de données via Sequelize
 
 ## Prérequis
