@@ -32,11 +32,11 @@ Clonez le dépôt sur votre machine locale et accédez au dossier du projet.
 
 ```bash
 git clone https://github.com/Romain-Gyt/backbone_express.git
-cd granite-goelettes-backend
+cd backbone_express
 ```
 
 ### Étape 2 : Installer les dependances
-
+git config --global user.name
 npm install
 
 
