@@ -50,7 +50,7 @@ npm install
 - PORT=*Port sur lequel le serveur Express écoutera (ex : 4000)*
 - DB_DIALECT=*Dialecte de la base de données (mariadb, postgres, mysql, sqlite, etc.)*
 - JWT_SECRET=*Clé secrète utilisée pour la signature des tokens JWT*
-- NODE_ENV=* Environnement d'exécution (development, production,production)*
+- NODE_ENV=*Environnement d'exécution (development, production,production)*
 
 
 ### Étape 4 : Lancer le serveur
