@@ -9,7 +9,6 @@ Basé sur Node.js, conçu avec Express.js et Sequelize. Il est conçu pour être
 - Authentification avec JWT
 - Gestion des utilisateurs et des rôles
 - Autorisations basées sur des rôles avec niveaux hiérarchiques
-- API CRUD pour les utilisateurs et les rôles
 - Compatibilité avec plusieurs moteurs de base de données via Sequelize
 
 ## Prérequis
@@ -36,8 +35,9 @@ cd backbone_express
 ```
 
 ### Étape 2 : Installer les dependances
-git config --global user.name
+```bash
 npm install
+```
 
 
 ### Étape 3 : Creation a la racine du fichier .env
@@ -49,8 +49,8 @@ npm install
 - DB_NAME=*Nom de la base de données*
 - PORT=*Port sur lequel le serveur Express écoutera (ex : 4000)*
 - DB_DIALECT=*Dialecte de la base de données (mariadb, postgres, mysql, sqlite, etc.)*
-- JWT_SECRET=* Clé secrète utilisée pour la signature des tokens JWT*
-- NODE_ENV=* Environnement d'exécution (development, production,production)*
+- JWT_SECRET=*Clé secrète utilisée pour la signature des tokens JWT*
+- NODE_ENV=*Environnement d'exécution (development, production,production)*
 
 
 ### Étape 4 : Lancer le serveur
@@ -127,7 +127,6 @@ backone-backend/
 - POST /api/roles : Crée un nouveau rôle
   Paramètres requis : name, hierarchyLevel
 - GET /api/roles : Récupère tous les rôles
-  Réponse :
 
 ### Gestion des Profils
 - Route a créer selon vos besoins
