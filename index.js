@@ -1,18 +1,19 @@
 
 const express = require('express');
+const helmet = require('helmet');
 const { connectDB } = require('./config/db')
 const cors = require('cors');
 const dotenv = require('dotenv');
 const  seed  = require('./script/initialSeed');
 dotenv.config();//charge les variables d'environnement
 const app = express();
-const PORT = process.env.PORT || 5000 ;  // Défini le port à partir de l'environnement ou utilise le port 4000 par défaut
+const PORT = process.env.PORT || 5000 ;  // Défini le port à partir de l'environnement ou utilise le port 5000 par défaut
 
 // Middleware
+app.use(helmet());
 app.use(cors());  // Activer les CORS
 app.use(express.json());  // Pour pouvoir lire les données JSON dans les requêtes
 
-//
 
 //connexion db
 connectDB();
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth',require('./routes/authRoutes'));
 app.use('/api/users',require('./routes/userRoutes'));
 app.use('/api/role',require('./routes/roleRoutes'));
+
 
 seed.runInitialSeed().then(() => {
     app.listen(PORT, () => {
